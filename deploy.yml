@@ -1,16 +1,3 @@
-# CI/CD Pipeline - Практическая реализация
-
-## Описание проекта
-Мессенджер Whithin с голосовыми вызовами:
-- **Frontend**: React.js (Vite)
-- **Backend**: ASP.NET Core Web API
-- **Database**: PostgreSQL
-- **Reverse Proxy**: Nginx
-- **Containerization**: Docker + Docker Compose
-
-## Реализованный GitHub Actions Workflow
-
-```yaml
 name: Deploy to Ubuntu Server
 
 on:
@@ -115,7 +102,7 @@ jobs:
           chmod +x docker-compose.yml
           chmod -R 755 /home/Whithin-deploy
           
-          # Запускаем Docker контейнеры
+          # Запускаем Docker контейнеры (dev версия)
           echo "Starting services..."
           docker-compose up -d --build
           
@@ -142,10 +129,3 @@ jobs:
           # Показываем статус контейнеров
           echo "Container status:"
           docker-compose ps
-```
-
-## Результат успешного развертывания
-
-![GitHub Actions - Успешное развертывание](image.png)
-
-
